@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,70 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Silly_Song" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genetate a silly song" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Abx-JG-AcQ">
+                                <rect key="frame" x="67.5" y="49" width="240" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="7oo-R8-lzQ"/>
+                                    <constraint firstAttribute="width" constant="240" id="lpP-I1-gsf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="28"/>
+                                <color key="textColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fte-DT-CZj">
+                                <rect key="frame" x="89" y="121" width="196" height="36"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="displayLyrics:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="CeH-yN-HZl"/>
+                                    <action selector="reset:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="wYh-U8-nUs"/>
+                                </connections>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="he9-iE-Xhl">
+                                <rect key="frame" x="67" y="216" width="240" height="361"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="361" id="1Eu-s8-yXG"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="240" id="88H-dP-BUF"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="240" id="FfB-F8-sgD"/>
+                                    <constraint firstAttribute="width" constant="240" id="mA7-Hn-vhR"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="361" id="oOC-lw-LE7"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="26"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fte-DT-CZj" firstAttribute="top" secondItem="Abx-JG-AcQ" secondAttribute="bottom" constant="27" id="PSf-fz-RBl"/>
+                            <constraint firstItem="fte-DT-CZj" firstAttribute="top" secondItem="Abx-JG-AcQ" secondAttribute="bottom" constant="27" id="Pq5-OE-LBk"/>
+                            <constraint firstItem="he9-iE-Xhl" firstAttribute="top" secondItem="fte-DT-CZj" secondAttribute="bottom" constant="59" id="QHl-WR-fJi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fte-DT-CZj" secondAttribute="trailing" constant="90" id="RDh-5w-Udx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="fte-DT-CZj" secondAttribute="trailing" constant="90" id="YmD-pH-hVM"/>
+                            <constraint firstItem="he9-iE-Xhl" firstAttribute="top" secondItem="fte-DT-CZj" secondAttribute="bottom" constant="59" id="bu5-7m-g70"/>
+                            <constraint firstItem="Abx-JG-AcQ" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="cDx-li-Dgt"/>
+                            <constraint firstItem="fte-DT-CZj" firstAttribute="top" secondItem="Abx-JG-AcQ" secondAttribute="bottom" constant="27" id="gfX-nJ-KgJ"/>
+                            <constraint firstItem="Abx-JG-AcQ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="49" id="jvy-AF-ciQ"/>
+                            <constraint firstItem="fte-DT-CZj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="89" id="qdW-6w-Z4D"/>
+                            <constraint firstItem="he9-iE-Xhl" firstAttribute="centerX" secondItem="fte-DT-CZj" secondAttribute="centerX" id="uBZ-cV-7oE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="lyricsView" destination="he9-iE-Xhl" id="pHI-IY-Pdf"/>
+                        <outlet property="nameField" destination="fte-DT-CZj" id="cQh-cD-O9G"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-449" y="0.0"/>
         </scene>
     </scenes>
 </document>
